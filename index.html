@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ahmed — Cybersecurity Student &amp; Developer</title>
+    <meta name="description"
+        content="Ahmed — First-year B.Tech Cybersecurity student at KIET. Building web apps and learning security fundamentals." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════════
+     SKY CANVAS
+═══════════════════════════════════════════ -->
+    <div id="sky-canvas" aria-hidden="true">
+        <div class="sky-bg" id="sky-bg"></div>
+        <div class="sky-horizon" id="sky-horizon"></div>
+
+        <!-- Stars -->
+        <div id="stars-wrap"></div>
+
+        <!-- Shooting stars -->
+        <div class="shoot" style="--dur2:7s;--del2:2s;--ang:-18deg;width:110px;top:14%;right:22%"></div>
+        <div class="shoot" style="--dur2:9s;--del2:6s;--ang:-22deg;width:90px;top:8%;right:48%"></div>
+        <div class="shoot" style="--dur2:11s;--del2:10s;--ang:-15deg;width:130px;top:20%;right:35%"></div>
+
+        <!-- Clouds -->
+        <div class="cloud" id="cloud1" style="--spd:75s;--x0:-220px;top:11%">
+            <svg width="210" height="62" viewBox="0 0 210 62">
+                <ellipse cx="84" cy="47" rx="79" ry="18" fill="rgba(255,255,255,0.88)" />
+                <ellipse cx="74" cy="33" rx="48" ry="23" fill="rgba(255,255,255,0.92)" />
+                <ellipse cx="122" cy="36" rx="42" ry="21" fill="rgba(255,255,255,0.9)" />
+                <ellipse cx="94" cy="29" rx="31" ry="19" fill="rgba(255,255,255,0.94)" />
+            </svg>
+        </div>
+        <div class="cloud" id="cloud2" style="--spd:100s;--x0:-160px;top:21%;animation-delay:-35s">
+            <svg width="155" height="48" viewBox="0 0 155 48">
+                <ellipse cx="62" cy="37" rx="57" ry="14" fill="rgba(255,255,255,0.77)" />
+                <ellipse cx="57" cy="27" rx="36" ry="18" fill="rgba(255,255,255,0.82)" />
+                <ellipse cx="95" cy="29" rx="32" ry="16" fill="rgba(255,255,255,0.80)" />
+            </svg>
+        </div>
+        <div class="cloud" id="cloud3" style="--spd:130s;--x0:-100px;top:38%;animation-delay:-65s">
+            <svg width="125" height="40" viewBox="0 0 125 40">
+                <ellipse cx="50" cy="31" rx="46" ry="12" fill="rgba(255,255,255,0.65)" />
+                <ellipse cx="46" cy="22" rx="29" ry="15" fill="rgba(255,255,255,0.70)" />
+                <ellipse cx="76" cy="24" rx="26" ry="14" fill="rgba(255,255,255,0.67)" />
+            </svg>
+        </div>
+
+        <!-- Sun -->
+        <div id="sun">
+            <div id="sun-glow"></div>
+            <div id="sun-rays-wrap"></div>
+        </div>
+
+        <!-- Moon -->
+        <div id="moon">
+            <div class="moon-crater" style="width:13px;height:13px;top:19%;left:24%"></div>
+            <div class="moon-crater" style="width:7px;height:7px;top:54%;left:56%"></div>
+            <div class="moon-crater" style="width:9px;height:9px;top:34%;left:61%"></div>
+            <div class="moon-crater" style="width:5px;height:5px;top:66%;left:28%"></div>
+            <div id="moon-glow"></div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+     CONTENT
+═══════════════════════════════════════════ -->
+    <div id="content">
+
+        <!-- NAV -->
+        <nav id="main-nav" class="nav-bg-day" role="navigation" aria-label="Main navigation">
+            <a href="#hero" class="nav-logo tc-primary" aria-label="Ahmed home">⟨ahmed/⟩</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <span id="sky-time" class="time-day" aria-live="polite" aria-label="Current time"></span>
+                <button class="theme-btn is-day" id="themeToggle" aria-label="Toggle day/night mode"
+                    aria-pressed="false">
+                    <div class="theme-btn-thumb" id="themeThumb"><span id="themeEmoji" aria-hidden="true">☀️</span>
+                    </div>
+                </button>
+            </div>
+        </nav>
+
+        <!-- ═══ HERO ═══ -->
+        <section id="hero" aria-label="Introduction">
+            <div class="hero-inner">
+                <div class="hero-text">
+                    <div class="hero-eyebrow"><span aria-hidden="true">🔐</span> Cybersecurity &amp; Development</div>
+                    <h1 class="hero-name tc-primary">Ahmed</h1>
+                    <h2 class="hero-role tc-warm">Cybersecurity Student &amp; Developer</h2>
+                    <div class="typing-row" aria-label="Specializations">
+                        <span class="prompt" aria-hidden="true">$&gt;&nbsp;</span>
+                        <span class="tc-primary typing-word" id="typing-word" aria-live="polite"></span><span
+                            class="caret" aria-hidden="true"></span>
+                    </div>
+                    <p class="hero-sub tc-secondary">
+                        Building web applications, learning cybersecurity, and solving problems through code.
+                    </p>
+                    <div class="hero-btns">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="resume.pdf" class="btn btn-outline" id="resumeBtn" aria-label="Download resume">⬇
+                            Resume</a>
+                        <a href="https://github.com/CaringWaryCaptain" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-outline">GitHub ↗</a>
+                        <a href="https://linkedin.com/in/ahmed" target="_blank" rel="noopener noreferrer"
+                            class="btn btn-outline">LinkedIn ↗</a>
+                    </div>
+                </div>
+
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="hero-card-stack">
+                        <div class="hcard hcard-back">
+                            <div class="code-block">
+                                <div><span class="ck">const</span> ahmed = {</div>
+                                <div>&nbsp;&nbsp;<span class="ck">role</span>: <span class="cs">"B.Tech CSE"</span>,
+                                </div>
+                                <div>&nbsp;&nbsp;<span class="ck">focus</span>: <span class="cs">"Cybersecurity"</span>
+                                </div>
+                                <div>};</div>
+                            </div>
+                        </div>
+                        <div class="hcard hcard-main">
+                            <div class="code-block">
+                                <div><span class="ck">skills</span>: [</div>
+                                <div>&nbsp;&nbsp;<span class="cs">"Java"</span>, <span class="cs">"Next.js"</span>,
+                                </div>
+                                <div>&nbsp;&nbsp;<span class="cs">"TypeScript"</span>,</div>
+                                <div>&nbsp;&nbsp;<span class="cs">"Linux"</span>, <span class="cs">"Wireshark"</span>
+                                </div>
+                                <div>],</div>
+                                <div><span class="ck">leetcode</span>: <span class="cn">100</span><span class="cs">+
+                                        solved</span>,</div>
+                                <div><span class="ck">jee_math</span>: <span class="cn">98</span><span class="cs">th
+                                        %ile</span>,</div>
+                                <div><span class="ck">status</span>: <span class="cs">"open_to_intern"</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- ═══ ABOUT ═══ -->
+        <section id="about" aria-label="About Ahmed">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-avatar-wrap rv">
+                        <div class="about-avatar" aria-hidden="true">🛡️</div>
+                        <div class="stat-grid">
+                            <div class="stat-item glass rv rv-d1">
+                                <span class="stat-val tc-accent">1st</span>
+                                <span class="stat-lbl tc-secondary">Year B.Tech</span>
+                            </div>
+                            <div class="stat-item glass rv rv-d2">
+                                <span class="stat-val tc-accent" id="stat-leet">100+</span>
+                                <span class="stat-lbl tc-secondary">LeetCode</span>
+                            </div>
+                            <div class="stat-item glass rv rv-d3">
+                                <span class="stat-val tc-accent">98th</span>
+                                <span class="stat-lbl tc-secondary">JEE Math</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="section-label rv">About Me</p>
+                        <h2 class="section-title tc-primary rv">Building skills,<br />one commit at a time</h2>
+                        <p class="tc-secondary rv" style="font-size:1rem;line-height:1.82;margin-bottom:1.1rem">
+                            I'm a first-year <strong style="font-weight:600">B.Tech Cybersecurity student at KIET Group
+                                of Institutions</strong>. I'm passionate about the intersection of security and software
+                            — understanding how systems work, and then how to defend them.
+                        </p>
+                        <p class="tc-secondary rv" style="font-size:1rem;line-height:1.82;margin-bottom:1.1rem">
+                            Currently deepening my knowledge in Java, data structures &amp; algorithms, Linux internals,
+                            and security fundamentals. I build practical web projects to apply what I learn.
+                        </p>
+                        <p class="tc-secondary rv" style="font-size:1rem;line-height:1.82">
+                            When I'm not writing code, I'm on TryHackMe, studying network protocols with Wireshark, or
+                            debugging something that worked perfectly fine yesterday.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- ═══ SKILLS ═══ -->
+        <section id="skills" aria-label="Skills and technologies">
+            <div class="container">
+                <p class="section-label rv">What I Work With</p>
+                <h2 class="section-title tc-primary rv">Skills &amp; Technologies</h2>
+                <div class="skills-grid">
+                    <div class="glass rv" style="padding:1.4rem">
+                        <p class="skill-cat">Languages</p>
+                        <div style="display:flex;flex-wrap:wrap;gap:0.45rem">
+                            <span class="stag">☕ Java</span><span class="stag">⚙️ C</span>
+                            <span class="stag">🟨 JavaScript</span><span class="stag">🔷 TypeScript</span>
+                        </div>
+                    </div>
+                    <div class="glass rv rv-d1" style="padding:1.4rem">
+                        <p class="skill-cat">Web Development</p>
+                        <div style="display:flex;flex-wrap:wrap;gap:0.45rem">
+                            <span class="stag">HTML</span><span class="stag">CSS</span>
+                            <span class="stag">⚛️ React</span><span class="stag">▲ Next.js</span><span class="stag">🌊
+                                Tailwind</span>
+                        </div>
+                    </div>
+                    <div class="glass rv rv-d2" style="padding:1.4rem">
+                        <p class="skill-cat">Tools &amp; Environment</p>
+                        <div style="display:flex;flex-wrap:wrap;gap:0.45rem">
+                            <span class="stag">🐙 Git</span><span class="stag">GitHub</span>
+                            <span class="stag">VS Code</span><span class="stag">🐧 Linux</span>
+                        </div>
+                    </div>
+                    <div class="glass rv rv-d3" style="padding:1.4rem">
+                        <p class="skill-cat">Cybersecurity</p>
+                        <div style="display:flex;flex-wrap:wrap;gap:0.45rem">
+                            <span class="stag">🌐 Networking</span><span class="stag">🦈 Wireshark</span>
+                            <span class="stag">⚔️ TryHackMe</span><span class="stag">🔒 Security Fundamentals</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- ═══ PROJECTS ═══ -->
+        <section id="projects" aria-label="Projects">
+            <div class="container">
+                <p class="section-label rv">What I've Built</p>
+                <h2 class="section-title tc-primary rv">Projects</h2>
+                <div class="projects-grid">
+
+                    <!-- CraveIt -->
+                    <article class="proj-card rv" aria-label="CraveIt project">
+                        <div class="proj-img">
+                            <div class="proj-img-placeholder" id="craveit-thumb"
+                                style="background:linear-gradient(135deg,#fef3c7,#fde68a)">
+                                <span style="font-size:3.5rem;z-index:2;position:relative">🍔</span>
+                                <div
+                                    style="position:absolute;inset:0;opacity:0.12;background:repeating-linear-gradient(45deg,#f59e0b22 0,#f59e0b22 1px,transparent 0,transparent 50%) 0 0/20px 20px">
+                                </div>
+                            </div>
+                            <div class="proj-img-overlay"></div>
+                            <div class="proj-img-links">
+                                <a href="https://github.com/CaringWaryCaptain/CraveIt" target="_blank"
+                                    rel="noopener noreferrer" class="img-link-btn" aria-label="CraveIt GitHub">GitHub
+                                    ↗</a>
+                            </div>
+                        </div>
+                        <div class="proj-body">
+                            <h3 class="proj-title tc-primary">CraveIt</h3>
+                            <p class="proj-desc tc-secondary">Modern food ordering application with real-time menu
+                                browsing, cart management, and a polished checkout experience.</p>
+                            <div class="tech-badges">
+                                <span class="tbadge">Next.js</span><span class="tbadge">TypeScript</span><span
+                                    class="tbadge">Tailwind CSS</span>
+                            </div>
+                            <div class="proj-actions">
+                                <a href="https://github.com/CaringWaryCaptain/CraveIt" target="_blank"
+                                    rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub ↗</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Student Health Portal -->
+                    <article class="proj-card rv rv-d1" aria-label="Student Health Portal project">
+                        <div class="proj-img">
+                            <div class="proj-img-placeholder"
+                                style="background:linear-gradient(135deg,#d1fae5,#a7f3d0)">
+                                <span style="font-size:3.5rem;z-index:2;position:relative">🏥</span>
+                                <div
+                                    style="position:absolute;inset:0;opacity:0.12;background:repeating-linear-gradient(45deg,#10b98122 0,#10b98122 1px,transparent 0,transparent 50%) 0 0/20px 20px">
+                                </div>
+                            </div>
+                            <div class="proj-img-overlay"></div>
+                            <div class="proj-img-links">
+                                <a href="https://github.com/CaringWaryCaptain" target="_blank" rel="noopener noreferrer"
+                                    class="img-link-btn" aria-label="Student Health Portal GitHub">GitHub ↗</a>
+                            </div>
+                        </div>
+                        <div class="proj-body">
+                            <h3 class="proj-title tc-primary">Student Health Portal</h3>
+                            <p class="proj-desc tc-secondary">Campus health management platform with appointment
+                                booking, emergency service access, and student health assessments.</p>
+                            <div class="tech-badges">
+                                <span class="tbadge">React</span><span class="tbadge">Next.js</span><span
+                                    class="tbadge">TypeScript</span>
+                            </div>
+                            <div class="proj-actions">
+                                <a href="https://github.com/CaringWaryCaptain" target="_blank" rel="noopener noreferrer"
+                                    class="btn btn-outline btn-sm">GitHub ↗</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Masala & More -->
+                    <article class="proj-card rv rv-d2" aria-label="Masala and More project">
+                        <div class="proj-img">
+                            <div class="proj-img-placeholder"
+                                style="background:linear-gradient(135deg,#ffe4e6,#fecdd3)">
+                                <span style="font-size:3.5rem;z-index:2;position:relative">🌶️</span>
+                                <div
+                                    style="position:absolute;inset:0;opacity:0.12;background:repeating-linear-gradient(45deg,#ef444422 0,#ef444422 1px,transparent 0,transparent 50%) 0 0/20px 20px">
+                                </div>
+                            </div>
+                            <div class="proj-img-overlay"></div>
+                            <div class="proj-img-links">
+                                <a href="https://github.com/CaringWaryCaptain" target="_blank" rel="noopener noreferrer"
+                                    class="img-link-btn" aria-label="Masala and More GitHub">GitHub ↗</a>
+                            </div>
+                        </div>
+                        <div class="proj-body">
+                            <h3 class="proj-title tc-primary">Masala &amp; More</h3>
+                            <p class="proj-desc tc-secondary">Responsive restaurant website with a modern aesthetic,
+                                full menu showcase, and optimized mobile-first experience.</p>
+                            <div class="tech-badges">
+                                <span class="tbadge">HTML</span><span class="tbadge">CSS</span><span
+                                    class="tbadge">JavaScript</span>
+                            </div>
+                            <div class="proj-actions">
+                                <a href="https://github.com/CaringWaryCaptain" target="_blank" rel="noopener noreferrer"
+                                    class="btn btn-outline btn-sm">GitHub ↗</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Wildfire Tracker -->
+                    <article class="proj-card rv rv-d3" aria-label="Wildfire Tracker project" style="position:relative">
+                        <div class="proj-featured-badge">🔥 Featured</div>
+                        <div class="proj-img">
+                            <div class="proj-img-placeholder"
+                                style="background:linear-gradient(135deg,#1a0a00,#3d1200,#7c2d00)">
+                                <span style="font-size:3.5rem;z-index:2;position:relative">🔥</span>
+                                <div
+                                    style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 80%,rgba(255,100,0,0.35) 0%,transparent 70%)">
+                                </div>
+                                <div
+                                    style="position:absolute;inset:0;opacity:0.18;background:repeating-linear-gradient(45deg,#ff6a0022 0,#ff6a0022 1px,transparent 0,transparent 50%) 0 0/20px 20px">
+                                </div>
+                            </div>
+                            <div class="proj-img-overlay"></div>
+                            <div class="proj-img-links">
+                                <a href="https://github.com/CaringWaryCaptain/wildfire-tracker" target="_blank"
+                                    rel="noopener noreferrer" class="img-link-btn"
+                                    aria-label="Wildfire Tracker GitHub">GitHub ↗</a>
+                            </div>
+                        </div>
+                        <div class="proj-body">
+                            <h3 class="proj-title tc-primary">Wildfire Tracker</h3>
+                            <p class="proj-desc tc-secondary">Real-time wildfire monitoring dashboard using NASA FIRMS
+                                data — visualises active fire hotspots on an interactive map with live alerts and
+                                severity filters.</p>
+                            <div class="tech-badges">
+                                <span class="tbadge">HTML</span><span class="tbadge">CSS</span><span
+                                    class="tbadge">JavaScript</span><span class="tbadge">NASA FIRMS API</span><span
+                                    class="tbadge">Leaflet.js</span>
+                            </div>
+                            <div class="proj-actions">
+                                <a href="https://github.com/CaringWaryCaptain/wildfire-tracker" target="_blank"
+                                    rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub ↗</a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- ═══ ACHIEVEMENTS ═══ -->
+        <section id="achievements" aria-label="Achievements">
+            <div class="container">
+                <p class="section-label rv">Recognition</p>
+                <h2 class="section-title tc-primary rv">Achievements</h2>
+                <div class="ach-grid">
+                    <div class="ach-card rv">
+                        <div class="ach-bg-glow" style="background:#fbbf24"></div>
+                        <span class="ach-icon" aria-hidden="true">🏆</span>
+                        <span class="ach-val tc-warm" data-target="98" data-suffix="th">0</span>
+                        <span class="ach-label tc-primary">JEE Mathematics Percentile</span>
+                        <p class="ach-desc tc-secondary">Scored in the 98th percentile in Mathematics in JEE — a strong
+                            foundation for algorithmic thinking and problem solving.</p>
+                    </div>
+                    <div class="ach-card rv rv-d1">
+                        <div class="ach-bg-glow" style="background:#6366f1"></div>
+                        <span class="ach-icon" aria-hidden="true">⚡</span>
+                        <span class="ach-val tc-accent" data-target="100" data-suffix="+">0</span>
+                        <span class="ach-label tc-primary">LeetCode Problems Solved</span>
+                        <p class="ach-desc tc-secondary">100+ problems solved covering arrays, strings, recursion,
+                            trees, and dynamic programming. Solving more every week.</p>
+                    </div>
+                    <div class="ach-card rv rv-d2">
+                        <div class="ach-bg-glow" style="background:#10b981"></div>
+                        <span class="ach-icon" aria-hidden="true">🎓</span>
+                        <span class="ach-val tc-accent" style="font-size:1.6rem">B.Tech</span>
+                        <span class="ach-label tc-primary">Cybersecurity, KIET</span>
+                        <p class="ach-desc tc-secondary">Pursuing B.Tech in Cybersecurity at KIET Group of Institutions
+                            — combining software engineering with security expertise.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- ═══ CONTACT ═══ -->
+        <section id="contact" aria-label="Contact information">
+            <div class="container">
+                <p class="section-label rv">Let's Connect</p>
+                <h2 class="section-title tc-primary rv">Get In Touch</h2>
+                <p class="tc-secondary rv" style="font-size:1rem;line-height:1.74;max-width:520px;margin-bottom:0.5rem">
+                    Open to internship opportunities, collaborations, and conversations about cybersecurity or web
+                    development. Feel free to reach out.
+                </p>
+                <div class="contact-wrap">
+                    <a href="mailto:ahmed@example.com" class="contact-card rv" aria-label="Send email">
+                        <div class="c-icon" style="background:rgba(239,68,68,0.1)" aria-hidden="true">📧</div>
+                        <div>
+                            <p class="c-title tc-primary">Email</p>
+                            <p class="c-val tc-secondary">ahmed@example.com</p>
+                        </div>
+                    </a>
+                    <a href="https://github.com/CaringWaryCaptain" target="_blank" rel="noopener noreferrer"
+                        class="contact-card rv rv-d1" aria-label="GitHub profile">
+                        <div class="c-icon" style="background:rgba(15,20,60,0.12)" aria-hidden="true">🐙</div>
+                        <div>
+                            <p class="c-title tc-primary">GitHub</p>
+                            <p class="c-val tc-secondary">CaringWaryCaptain</p>
+                        </div>
+                    </a>
+                    <a href="https://linkedin.com/in/ahmed" target="_blank" rel="noopener noreferrer"
+                        class="contact-card rv rv-d2" aria-label="LinkedIn profile">
+                        <div class="c-icon" style="background:rgba(59,130,246,0.1)" aria-hidden="true">💼</div>
+                        <div>
+                            <p class="c-title tc-primary">LinkedIn</p>
+                            <p class="c-val tc-secondary">linkedin.com/in/ahmed</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p class="tc-secondary">Designed &amp; built by Ahmed · B.Tech Cybersecurity · KIET Group of Institutions
+            </p>
+            <p style="margin-top:0.3rem;font-size:0.7rem;opacity:0.65">Made with ☕ Java and a lot of curiosity</p>
+        </footer>
+
+    </div><!-- /content -->
+
+    <script src="main.js"></script>
+</body>
+
+</html>
